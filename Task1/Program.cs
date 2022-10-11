@@ -1,42 +1,35 @@
-﻿// See https://aka.ms/new-console-template for more information
- 
+﻿/*  Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.   */
 
-int N = Start("Введите 5-ти значное число: ");
+//Вводим число
 
 int Start(string message)
 {
     Console.Write(message);
-    int N1 = Convert.ToInt32(Console.ReadLine());
-    return N1;
-}
+    int Number = Convert.ToInt32(Console.ReadLine());
+    return Number;
+}              
 
-string Raschet(int Number)
+
+string Raschet(int N)
 {
-    if (Number < 10000 || Number > 99999)
-    {
-        string Otvet = "Вы ввели не 5-ти значное число";
-        return Otvet;
-    }
-
-    else 
+    if (N >= 10000 && N <= 99999)
     {
         if(N/10000 == N%10 && N/1000%10 == N%100/10 && N/100%10 == N%1000/100)
         {
             string Otvet = $"Число {N} является палиндромом";
             return Otvet;
         }
+
         else
         {
             string Otvet = $"Число {N} не является палиндромом";
             return Otvet;
         }
     }
+    else {return "Вы ввели не пятизначное число";}
+    
 }
 
-string Otvet = Raschet(N);
+int Number = Start("Введите 5-ти значное число: ");
+string Otvet = Raschet(Number);
 Console.WriteLine(Otvet);
-
-
-
-
-
