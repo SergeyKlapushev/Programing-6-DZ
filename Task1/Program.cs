@@ -16,17 +16,17 @@ string Raschet(int N)
     {
         if(N/10000 == N%10 && N/1000%10 == N%100/10 && N/100%10 == N%1000/100)
         {
-            string Otvet = $"Число {N} является палиндромом";
+            string Otvet = $"Число {N} -> является палиндромом";
             return Otvet;
         }
 
         else
         {
-            string Otvet = $"Число {N} не является палиндромом";
+            string Otvet = $"Число {N} -> не является палиндромом";
             return Otvet;
         }
     }
-    else {return "Вы ввели не пятизначное число";}
+    else {return $"{N} не пятизначное число";}
     
 }
 
